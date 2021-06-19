@@ -6,7 +6,7 @@ Lenovo ThinkPad E580 OpenCore configuration for macOS Big Sur
 | --------- | ----- |
 | **CPU** | Intel Core i5-8250U |
 | **GPU** | Intel UHD 620 |
-| **SSD (System)** | M.2 25 GB |
+| **SSD (System)** | M.2 256 GB |
 | **ETHERNET** | Realtek 8111GUS |
 | **AUDIO** | Conexant CX20753 |
 | **Touch Pad** | Synaptics TM3383-032 |
@@ -15,20 +15,19 @@ Lenovo ThinkPad E580 OpenCore configuration for macOS Big Sur
 
 
 ## Compatibility checklist
-- [x] Audio
+- [x] Audio (in and out)
 - [x] Camera
 - [x] USB
 - [x] Full Gesture Support
 - [x] Ethernet
 - [x] WiFi (see notes)
 - [x] iServices (make sure you have unique SMBIOS generated)
-- [x] Sleep
-- [x] Proper GPU support
 - [x] Power Management
 - [x] Bluetooth (still a bit buggy)
 
 ### Not working
 - HDMI out
+- Sleep is broken after first attempt
 - Fingerprint (unfixable)
 - Audio streaming through Bluetooth is dropping (possibly due to Intel wireless chip)
 - Shit breaks on its own after waking the device from sleep
@@ -76,8 +75,6 @@ Generate SMBIOS for `MacBookPro14,1` (Generate with [GenSMBIOS](https://github.c
 **[VoodooPS2](https://github.com/acidanthera/VoodooPS2)** - Magic Trackpad Emulator with native driver support
 
 **[VoodooRMI](https://github.com/VoodooSMBus/VoodooRMI)** - A port for macOS of Synaptic's RMI Trackpad driver from Linux
-
-**[VoodooSMBus](https://github.com/VoodooSMBus/VoodooSMBus)** - Adds support for the SMBus capabilities of Intel I/O Controller Hubs (ICH)
 
 **[NoTouchID](https://github.com/al3xtjames/NoTouchID)** - Disables Touch ID
 
